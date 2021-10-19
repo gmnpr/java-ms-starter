@@ -10,3 +10,11 @@ spring:
     password: ${DB_PG_PWD_MIGRATION:postgres}
     url: jdbc:postgresql://${DB_PG_HOST:localhost}:${DB_PG_PORT:5432}/${DB_PG_BASE:jms-pay-db}
     baseline-on-migrate: true
+  rabbitmq:
+    addresses: ${RABBITMQ_ADDRESSES:localhost:5672}
+    username: ${RABBITMQ_USR:jms-user}
+    password: ${RABBITMQ_PWD:jms-user}
+    virtual-host: ${RABBITMQ_VIRTUAL_HOST:jms}
+rabbitmq:
+  notify-exchange: ${NOTIFY_EXCHANGE:jms-wrk}
+  routing-key: ${NOTIFY_QUEUE:jms-notify}
