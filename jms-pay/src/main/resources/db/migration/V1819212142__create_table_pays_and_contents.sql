@@ -4,10 +4,10 @@ CREATE TABLE pays (
 );
 
 CREATE TABLE contents (
-    id SERIAL PRIMARY KEY,
-    goods_id SERIAL,
-    count  SMALLSERIAL,
-    pay_id SERIAL,
+    id         SERIAL PRIMARY KEY,
+    goods_id   SERIAL,
+    count      SMALLSERIAL,
+    pay_id     SERIAL,
 
     CONSTRAINT FK_PAY FOREIGN KEY (pay_id) REFERENCES pays (id)
 );
